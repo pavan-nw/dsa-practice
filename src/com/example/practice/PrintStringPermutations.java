@@ -3,6 +3,7 @@ package com.example.practice;
 import java.util.ArrayList;
 import java.util.List;
 
+// https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/?ref=lbp
 public class PrintStringPermutations {
     public static void main(String[] args) {
         String input = "ABC";
@@ -34,16 +35,13 @@ public class PrintStringPermutations {
     }
 
     // 2nd Approach
-    static void permute(String s , String answer)
-    {
-        if (s.length() == 0)
-        {
+    static void permute(String s , String answer) {
+        if (s.length() == 0) {
             System.out.print(answer + "  ");
             return;
         }
 
-        for(int i = 0 ;i < s.length(); i++)
-        {
+        for(int i = 0 ; i < s.length(); i++) {
             char ch = s.charAt(i);
             String left_substr = s.substring(0, i);
             String right_substr = s.substring(i + 1);

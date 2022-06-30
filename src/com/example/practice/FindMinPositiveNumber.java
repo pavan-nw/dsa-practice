@@ -1,7 +1,5 @@
 package com.example.practice;
 
-import java.util.Arrays;
-
 // https://www.youtube.com/watch?v=-lfHWWMmXXM
 
 public class FindMinPositiveNumber {
