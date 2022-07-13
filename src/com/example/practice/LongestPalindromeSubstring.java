@@ -8,7 +8,7 @@ public class LongestPalindromeSubstring {
     // to find the longest palindromic substring
 
     static int longestPalSubstr(String str) {
-        int n = str.length(); // calculcharAting size of string
+        int n = str.length(); // calculating size of string
         if (n < 2) {
             return n; // if string is empty then size will be 0.
         }
