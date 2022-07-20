@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.practice.dp;
 
 // https://www.youtube.com/watch?v=0NPYcQQWJ3Q
 

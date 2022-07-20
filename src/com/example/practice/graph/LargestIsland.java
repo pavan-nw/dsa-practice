@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.practice.graph;
 
 import java.util.HashSet;
 import java.util.Set;

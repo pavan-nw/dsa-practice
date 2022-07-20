@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.practice.dp;
 
 // https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/
 

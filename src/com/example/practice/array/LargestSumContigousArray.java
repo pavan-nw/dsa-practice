@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.practice.array;
 
 // Kaden's algorithm
 public class LargestSumContigousArray {

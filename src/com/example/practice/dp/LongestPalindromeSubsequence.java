@@ -1,9 +1,11 @@
-package com.example.practice;
+package com.example.practice.dp;
 
-// https://www.geeksforgeeks.org/printing-longest-common-subsequence/
-public class LongestCommonSubsequence {
-    // Dynamic Programming implementation of LCS problem in Java
+// https://www.geeksforgeeks.org/print-longest-palindromic-subsequence/?ref=gcse
 
+// This is the variation of longest common subsequence of 2 strings problem
+// We have to find common subsequence of string and its reverse
+
+public class LongestPalindromeSubsequence {
     // Returns length of LCS for X[0..m-1], Y[0..n-1]
     static void lcs(String X, String Y, int m, int n) {
         int[][] L = new int[m + 1][n + 1];
@@ -39,16 +41,13 @@ public class LongestCommonSubsequence {
             if (X.charAt(i - 1) == Y.charAt(j - 1)) {
                 // Put current character in result
                 lcs[lastIndex - 1] = X.charAt(i - 1);
-
                 // reduce values of i, j and lcsLength
                 i--;
                 j--;
                 lastIndex--;
-            }
-
-            // If not same, then find the larger of two and
-            // go in the direction of larger value
-            else if (L[i - 1][j] > L[i][j - 1]) {
+            } else if (L[i - 1][j] > L[i][j - 1]) {
+                // If not same, then find the larger of two and
+                // go in the direction of larger value
                 i--;
             } else {
                 j--;
@@ -56,18 +55,16 @@ public class LongestCommonSubsequence {
         }
 
         // Print the lcs
-        System.out.println("Length of longest common sequence is " + lcsLength);
-        System.out.print("LCS of " + X + " and " + Y + " is ");
+        System.out.println("Length of longest palindromic subsequence is " + lcsLength);
+        System.out.print("Longest palindromic subsequence is: ");
         for (int k = 0; k < lcsLength; k++) {
             System.out.print(lcs[k]);
         }
     }
 
     public static void main(String[] args) {
-        String X = "AGGTAB";
-        String Y = "GXTXAYB";
+        String X = "forgeeksskeegfor";
         int m = X.length();
-        int n = Y.length();
-        lcs(X, Y, m, n);
+        lcs(X, new StringBuffer(X).reverse().toString(), m, m);
     }
 }
