@@ -52,9 +52,9 @@ public class LargestIsland {
         int size = 1;
 
         size += explore(graph, row, col+1, visited, visited);  // Right
-        size +=explore(graph, row+1, col, visited, visited); // Down
-        size +=explore(graph, row, col-1, visited, visited); // Left
-        size +=explore(graph, row-1, col, visited, visited); // Up
+        size += explore(graph, row+1, col, visited, visited); // Down
+        size += explore(graph, row, col-1, visited, visited); // Left
+        size += explore(graph, row-1, col, visited, visited); // Up
 //        explore(graph, row+1, col+1, visited); // Downward Right Diagonal
 //        explore(graph, row+1, col-1, visited); // Downward Left Diagonal
 //        explore(graph, row-1, col-1, visited); // Upward Left Diagonal

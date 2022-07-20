@@ -28,7 +28,6 @@ public class LargestSumContigousArray {
             if(current_max_sum < 0) {
                 current_max_sum = 0;
                 s= i+1;
-
             }
             if (current_max_sum > max_sum) {
                 max_sum = current_max_sum;

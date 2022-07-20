@@ -1,4 +1,4 @@
-package com.example.practice;
+package com.example.practice.binarytree;
 
 import java.util.LinkedList;
 import java.util.Queue;

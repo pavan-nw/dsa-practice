@@ -41,16 +41,13 @@ public class LongestPalindromeSubsequence {
             if (X.charAt(i - 1) == Y.charAt(j - 1)) {
                 // Put current character in result
                 lcs[lastIndex - 1] = X.charAt(i - 1);
-
                 // reduce values of i, j and lcsLength
                 i--;
                 j--;
                 lastIndex--;
-            }
-
-            // If not same, then find the larger of two and
-            // go in the direction of larger value
-            else if (L[i - 1][j] > L[i][j - 1]) {
+            } else if (L[i - 1][j] > L[i][j - 1]) {
+                // If not same, then find the larger of two and
+                // go in the direction of larger value
                 i--;
             } else {
                 j--;
