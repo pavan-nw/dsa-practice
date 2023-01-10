@@ -5,7 +5,6 @@ import java.util.Date;
 final public class MyImmutableObj {
     private final String name;
     private final Date startDate;
-
     public MyImmutableObj(String name, Date startDate) {
         this.name = name;
         this.startDate = (Date) startDate.clone();
