@@ -8,9 +8,9 @@ public class LargestIsland {
     public static void main(String[] args) {
         int[][] graph = {
                 {1, 1, 0, 0, 0},
-                {0, 1, 0, 0, 1},
-                {1, 0, 0, 1, 1},
-                {0, 0, 0, 0, 1},
+                {0, 1, 0, 1, 1},
+                {1, 0, 1, 1, 0},
+                {0, 0, 1, 0, 1},
                 {1, 0, 1, 0, 1}
         };
 
@@ -25,7 +25,7 @@ public class LargestIsland {
         for (int r = 0; r < graph.length; r++) {
             for (int c = 0; c < graph[r].length; c++) {
                 Set<String> island = new HashSet<>();
-                int size = explore(graph, r, c, visited, island);
+                int size = explore(graph, r, c, island, visited);
                 if (size > largest) {
                     largest = size;
                     largestIsland = island;
@@ -51,10 +51,10 @@ public class LargestIsland {
         island.add(pos);
         int size = 1;
 
-        size += explore(graph, row, col+1, visited, visited);  // Right
-        size += explore(graph, row+1, col, visited, visited); // Down
-        size += explore(graph, row, col-1, visited, visited); // Left
-        size += explore(graph, row-1, col, visited, visited); // Up
+        size += explore(graph, row, col+1, island, visited);  // Right
+        size += explore(graph, row+1, col, island, visited); // Down
+        size += explore(graph, row, col-1, island, visited); // Left
+        size += explore(graph, row-1, col, island, visited); // Up
 //        explore(graph, row+1, col+1, visited); // Downward Right Diagonal
 //        explore(graph, row+1, col-1, visited); // Downward Left Diagonal
 //        explore(graph, row-1, col-1, visited); // Upward Left Diagonal

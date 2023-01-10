@@ -41,7 +41,7 @@ public class NumberOfSubArrayWithSumDivisbleByK {
         int rem = 0;
 
         HashMap<Integer, Integer> rmap = new HashMap<>();
-        rmap.put(0, 1);
+        rmap.put(rem, 1);
 
         for (Integer integer : nums) {
             sum = sum + integer;

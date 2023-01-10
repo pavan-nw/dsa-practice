@@ -75,15 +75,14 @@ public class VanityNumberSearch {
         List<String> nums = codes
                 .parallelStream()
                 .map(c -> getMatchingNumber(c, keypad))
-                .collect(Collectors.toList());
+                .toList();
 
         List<String> output = numbers
                 .parallelStream()
                 .distinct()
-                .filter(n1 -> nums.parallelStream().anyMatch(n2 -> n1.indexOf(n2) != -1))
+                .filter(n1 -> nums.parallelStream().anyMatch(n1::contains))
+                .sorted()
                 .collect(Collectors.toList());
-
-        Collections.sort(output);
 
         // output.forEach(a -> System.out.print(a + " "));
 
@@ -92,15 +91,15 @@ public class VanityNumberSearch {
     }
 
     public static String getMatchingNumber(String code, Map<Integer, List<Character>> keypad) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         for (int i = 0; i < code.length(); i++) {
             for (Integer key : keypad.keySet()) {
                 List<Character> list = keypad.get(key);
                 if(list.contains(code.charAt(i))){
-                    res = res + key;
+                    res.append(key);
                 }
             }
         }
-        return res;
+        return res.toString();
     }
 }
