@@ -75,7 +75,7 @@ public class VanityNumberSearch {
         List<String> nums = codes
                 .parallelStream()
                 .map(c -> getMatchingNumber(c, keypad))
-                .toList();
+                .collect(Collectors.toList());
 
         List<String> output = numbers
                 .parallelStream()
